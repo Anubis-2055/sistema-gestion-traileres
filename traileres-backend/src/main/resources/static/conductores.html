@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Conductores - Sistema de Gestión</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/modulo.css">
+</head>
+<body class="menu-body">
+<header class="topbar">
+  <h2>👤 Gestión de Conductores</h2>
+  <div class="user-info">
+    <a href="/menu.html" class="btn-volver">← Volver al menú</a>
+    <span id="userLabel"></span>
+    <button id="logoutBtn">Cerrar sesión</button>
+  </div>
+</header>
+
+<main class="modulo-container">
+  <div class="modulo-header">
+    <h3>Lista de Conductores</h3>
+    <button id="btnNuevo" class="btn-primary">+ Nuevo Conductor</button>
+  </div>
+
+  <p id="mensaje" class="mensaje"></p>
+
+  <table class="tabla">
+    <thead>
+    <tr>
+      <th>Cédula</th>
+      <th>Nombres</th>
+      <th>Apellidos</th>
+      <th>Licencia</th>
+      <th>Teléfono</th>
+      <th>Estado</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody id="tablaBody"></tbody>
+  </table>
+</main>
+
+<div id="modal" class="modal-overlay">
+  <div class="modal-box">
+    <h3 id="modalTitulo">Nuevo Conductor</h3>
+    <form id="conductorForm">
+      <input type="hidden" id="idConductor">
+
+      <label>Cédula</label>
+      <input type="text" id="cedula" required>
+
+      <label>Nombres</label>
+      <input type="text" id="nombres" required>
+
+      <label>Apellidos</label>
+      <input type="text" id="apellidos" required>
+
+      <label>Licencia</label>
+      <input type="text" id="licencia" required>
+
+      <label>Teléfono</label>
+      <input type="text" id="telefono">
+
+      <label>Estado</label>
+      <select id="estado">
+        <option value="DISPONIBLE">Disponible</option>
+        <option value="ASIGNADO">Asignado</option>
+        <option value="INACTIVO">Inactivo</option>
+      </select>
+
+      <div class="modal-actions">
+        <button type="button" id="btnCancelar" class="btn-secondary">Cancelar</button>
+        <button type="submit" class="btn-primary">Guardar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="js/conductores.js"></script>
+</body>
+</html>
