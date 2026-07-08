@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Gestión de Tráileres - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="login-container">
+    <div class="login-box">
+        <h1>🚛 Sistema de Gestión de Tráileres</h1>
+        <p class="subtitle">Inicia sesión para continuar</p>
+
+        <form id="loginForm">
+            <label for="username">Usuario</label>
+            <input type="text" id="username" placeholder="Ingresa tu usuario" required>
+
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" placeholder="Ingresa tu contraseña" required>
+
+            <button type="submit">Ingresar</button>
+
+            <p id="errorMsg" class="error-msg"></p>
+        </form>
+    </div>
+</div>
+
+<script src="js/login.js"></script>
+</body>
+</html>
