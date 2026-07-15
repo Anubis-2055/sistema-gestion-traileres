@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carga - Sistema de Gestión</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/modulo.css">
+</head>
+<body class="menu-body">
+<header class="topbar">
+    <h2>📦 Gestión de Carga</h2>
+    <div class="user-info">
+        <a href="/menu.html" class="btn-volver">← Volver al menú</a>
+        <span id="userLabel"></span>
+        <button id="logoutBtn">Cerrar sesión</button>
+    </div>
+</header>
+
+<main class="modulo-container">
+    <div class="modulo-header">
+        <h3>Lista de Carga</h3>
+        <button id="btnNuevo" class="btn-primary">+ Nueva Carga</button>
+    </div>
+
+    <p id="mensaje" class="mensaje"></p>
+
+    <table class="tabla">
+        <thead>
+        <tr>
+            <th>Ruta</th>
+            <th>Descripción</th>
+            <th>Peso (t)</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody id="tablaBody"></tbody>
+    </table>
+</main>
+
+<div id="modal" class="modal-overlay">
+    <div class="modal-box">
+        <h3>Nueva Carga</h3>
+        <form id="cargaForm">
+            <label>Ruta</label>
+            <select id="idRuta" required></select>
+
+            <label>Descripción</label>
+            <input type="text" id="descripcion">
+
+            <label>Peso (toneladas)</label>
+            <input type="number" step="0.01" id="peso" required>
+
+            <div class="modal-actions">
+                <button type="button" id="btnCancelar" class="btn-secondary">Cancelar</button>
+                <button type="submit" class="btn-primary">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal para cambiar estado (seguimiento) -->
+<div id="modalEstado" class="modal-overlay">
+    <div class="modal-box">
+        <h3>Actualizar Estado de Carga</h3>
+        <form id="estadoForm">
+            <label>Nuevo estado</label>
+            <select id="nuevoEstado" required>
+                <option value="REGISTRADA">Registrada</option>
+                <option value="EN_TRANSITO">En tránsito</option>
+                <option value="ENTREGADA">Entregada</option>
+            </select>
+            <div class="modal-actions">
+                <button type="button" id="btnCancelarEstado" class="btn-secondary">Cancelar</button>
+                <button type="submit" class="btn-primary">Actualizar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="js/carga.js"></script>
+</body>
+</html>
