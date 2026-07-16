@@ -6,6 +6,9 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/menu.css">
   <link rel="stylesheet" href="css/modulo.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+
 </head>
 <body class="menu-body">
 <header class="topbar">
@@ -39,7 +42,16 @@
     <tbody id="tablaBody"></tbody>
   </table>
 </main>
-
+<div id="modalMapa" class="modal-overlay">
+  <div class="modal-box modal-mapa">
+    <h3>Mapa de Ruta</h3>
+    <p id="mapaInfo" class="mapa-info">Calculando ruta...</p>
+    <div id="mapaContenedor"></div>
+    <div class="modal-actions">
+      <button type="button" id="btnCerrarMapa" class="btn-secondary">Cerrar</button>
+    </div>
+  </div>
+</div>
 <div id="modal" class="modal-overlay">
   <div class="modal-box">
     <h3>Nueva Ruta</h3>
